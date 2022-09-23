@@ -1,13 +1,17 @@
 import React from "react";
 
-function Transaction() {
+function Transaction({date, description, category, amount}) {
   return (
-    <tr>
-      <th>{"your code here..."}</th>
-      <th>{"your code here..."}</th>
-      <th>{"your code here..."}</th>
-      <th>{"your code here..."}</th>
-    </tr>
+    <React.Fragment>
+      <table>
+        <tr>
+          <td>{date}</td>
+          <td>{description}</td>
+          <td>{category}</td>
+          <td>{amount}</td>
+        </tr>
+      </table>
+    </React.Fragment>
   );
 }
 
