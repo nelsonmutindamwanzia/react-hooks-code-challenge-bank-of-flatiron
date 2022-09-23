@@ -3,10 +3,10 @@ import React from "react";
 function Transaction() {
   return (
     <tr>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
+      <th>{"your code here..."}</th>
+      <th>{"your code here..."}</th>
+      <th>{"your code here..."}</th>
+      <th>{"your code here..."}</th>
     </tr>
   );
 }
