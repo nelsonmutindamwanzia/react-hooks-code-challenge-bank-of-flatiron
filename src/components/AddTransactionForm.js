@@ -1,17 +1,37 @@
 import React, {useState} from "react";
 
 function AddTransactionForm() {
+  const [transactions, setTransactions] = useState([]); 
+  const [formData, setFormData] = useState({
+    date: "",
+    description: "",
+    category: "",
+    amount: 0,
+  })
+
   function handleChange(){
 
   }
 
-  function handleSubmit(){
-
+  function handleSubmit(event){
+    event.preventDefault()
+    fetch("http://localhost:8001/transactions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData)
+    })
+      .then((response) => response.json())
+      .then((data) => {
+      const newTransactionData = [...transactions, data] 
+      setTransactions(newTransactionData)
+      })
   }
 
   return (
     <div className="ui segment">
-      <form className="ui form">
+      <form onSubmit={handleSubmit} className="ui form">
         <div className="inline fields">
           <input onChange = {handleChange} type="date" name="date" />
           <input onChange = {handleChange} type="text" name="description" placeholder="Description" />
