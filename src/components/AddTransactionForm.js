@@ -9,8 +9,8 @@ function AddTransactionForm() {
     amount: 0,
   })
 
-  function handleChange(){
-
+  function handleChange(newForm){
+    setFormData ({...formData, newForm}); // to be reviewed
   }
 
   function handleSubmit(event){

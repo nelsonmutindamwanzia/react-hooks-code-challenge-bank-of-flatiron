@@ -1,8 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 
-function Search() {
-  const [search, setSearch] = useState("All")
-
+function Search({setSearch}) {
   function handleSearch (event){
     setSearch(event.target.value);
   }
