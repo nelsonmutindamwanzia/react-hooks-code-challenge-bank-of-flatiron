@@ -5,7 +5,8 @@ function TransactionsList({ transactions, setTransactions, search }) {
   const filteredTransactions = transactions.filter((transaction) => transaction.description.toLowerCase().includes(search.toLowerCase()))
 
   const transactList = filteredTransactions.map((transaction) => {
-    return <Transaction 
+    return (
+    <Transaction 
     transactions={transactions} 
     setTransactions={setTransactions}
     key={transaction.id} 
@@ -15,6 +16,7 @@ function TransactionsList({ transactions, setTransactions, search }) {
     amount={transaction.amount}
     id={transaction.id}
     />
+    )
 })
 
   useEffect(() => {
