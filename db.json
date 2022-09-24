@@ -83,6 +83,34 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2022-09-24",
+      "description": "Moon Watch",
+      "category": "Fashion",
+      "amount": "-24.99",
+      "id": 13
+    },
+    {
+      "date": "2022-09-24",
+      "description": "Glucose",
+      "category": "Food",
+      "amount": "0.99",
+      "id": 14
+    },
+    {
+      "date": "2022-09-24",
+      "description": "Sabbath Tithe",
+      "category": "Giving Back",
+      "amount": "100.00",
+      "id": 15
+    },
+    {
+      "date": "2022-09-24",
+      "description": "final test",
+      "category": "test",
+      "amount": "99.99",
+      "id": 16
     }
   ]
 }

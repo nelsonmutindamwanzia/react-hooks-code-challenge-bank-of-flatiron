@@ -1,7 +1,8 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import Transaction from "./Transaction";
 
-function TransactionsList({ transactions, setTransactions, search }) {
+function TransactionsList({search}) {
+  const [transactions, setTransactions] = useState([]);
   const filteredTransactions = transactions.filter((transaction) => transaction.description.toLowerCase().includes(search.toLowerCase()))
 
   const transactList = filteredTransactions.map((transaction) => {
