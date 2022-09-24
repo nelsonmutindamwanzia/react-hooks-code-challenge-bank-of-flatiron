@@ -1,16 +1,20 @@
 import React, {useState} from "react";
 
 function AddTransactionForm() {
-  const [transactions, setTransactions] = useState([]); 
-  const [formData, setFormData] = useState({
+  const [transaction, setTransaction] = useState([]); 
+  const [newData, setNewData] = useState({
     date: "",
     description: "",
     category: "",
     amount: 0,
   })
 
-  function handleChange(newForm){
-    setFormData ({...formData, newForm}); // to be reviewed
+  function handleChange(event){
+    let name = event.target.name
+    let value = event.target.value
+    setNewData ({  
+      ...newData, [name]: value
+    });
   }
 
   function handleSubmit(event){
@@ -20,12 +24,12 @@ function AddTransactionForm() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(newData)
     })
       .then((response) => response.json())
       .then((data) => {
-      const newTransactionData = [...transactions, data] 
-      setTransactions(newTransactionData)
+      const newTransactionData = [...transaction, data] 
+      setTransaction(newTransactionData)
       })
   }
 
